@@ -1,16 +1,16 @@
 CREATE TABLE Titles (
-	title_id VARCHAR(5) PRIMARY KEY,
-	title VARCHAR(255) NOT NULL
+	title_id CHAR(5) PRIMARY KEY,
+	title VARCHAR(25) NOT NULL
 );
 
 
 
 CREATE TABLE Employees (
     emp_no INT PRIMARY KEY,                     
-    emp_title_id VARCHAR(5) NOT NULL,           
+    emp_title_id CHAR(5) NOT NULL,           
     birth_date DATE NOT NULL,                    
-    first_name VARCHAR(255) NOT NULL,            
-    last_name VARCHAR(255) NOT NULL,             
+    first_name VARCHAR(20) NOT NULL,            
+    last_name VARCHAR(20) NOT NULL,             
     sex CHAR(1) NOT NULL,                        
     hire_date DATE NOT NULL,                     
     CONSTRAINT fk_emp_title_id FOREIGN KEY (emp_title_id) 
@@ -20,15 +20,15 @@ CREATE TABLE Employees (
 
 
 CREATE TABLE Departments (
-	dept_no VARCHAR(4) PRIMARY KEY,
-	dept_name VARCHAR(255) NOT NULL
+	dept_no CHAR(4) PRIMARY KEY,
+	dept_name VARCHAR(25) NOT NULL
 );
 
 
 
 CREATE TABLE Department_Employees (
 	emp_no INT NOT NULL,
-	dept_no VARCHAR(4) NOT NULL,
+	dept_no CHAR(4) NOT NULL,
 	CONSTRAINT fk_dept_emp_emp_no FOREIGN KEY (emp_no)
 		REFERENCES Employees (emp_no),
 	CONSTRAINT fk_dept_emp_dept_no FOREIGN KEY (dept_no)
@@ -39,7 +39,7 @@ CREATE TABLE Department_Employees (
 
 
 CREATE TABLE Department_Manager (
-	dept_no VARCHAR(4) NOT NULL,
+	dept_no CHAR(4) NOT NULL,
 	emp_no INT NOT NULL,
 	CONSTRAINT fk_dept_manager_dept_no FOREIGN KEY (dept_no)
 		REFERENCES Departments (dept_no),
