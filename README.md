@@ -1,4 +1,4 @@
-I looked at the csv files to determine what I was looking at as far as column names and understanding the data in general.
+I explored the csv files to determine what I was dealing with as far as column names and understanding the data in general.
 
 I used quickDBD to sketch the realtionships between the tables and used chatGPT and Xpert Learning Assistant to help me determine some of the foreign keys relationships
 
@@ -14,5 +14,5 @@ I used Xpert Learning Assistant to help me with the last query.
 
 I went back and ran queries to determine the maximun number of characters in the first and last names and the department names and titles to better assign VARCHAR numbers
 
-I then adjusted all of the tables schemata and the ERM to update the VARCHAR and CHAR values
+I then adjusted all of the tables schemata and the ERM to update the VARCHAR and CHAR values. I rounded up a little bit on each of them so the names were max at 16 and 18 so I did 20 and then the title and department names were each 18 so I did 25.
 
